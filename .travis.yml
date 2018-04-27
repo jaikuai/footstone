@@ -10,8 +10,7 @@ before_install:
   - chmod a+x ./mvnw
 
 script:
-  - ./mvnw clean install -B
-  - mvn sonar:sonar -Dsonar.organization=$SONAR_ORG -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+  - ./mvnw clean install -B sonar:sonar -Dsonar.organization=$SONAR_ORG -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
   
 after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
