@@ -1,12 +1,13 @@
 sudo: required
 language: java
+install: true
 jdk: oraclejdk8
 
 services:
   - docker
   
-before_script:
-  - chmod +x ./mvnw
+before_install:
+  - chmod a+x ./mvnw
 
 script:
   - ./mvnw clean install -B
